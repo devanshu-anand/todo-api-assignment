@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "5638b2e3-4058-48c1-9c6a-b490c0497cdc",
+		"name": "Todo-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authenticate-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "john@hotmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/users/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTY0NGJlZGJhY2QyMTA4ZjIxYWQyZCIsImlhdCI6MTY2MjQwNDQwNywiZXhwIjoxNjYyNDA4MDA3fQ.RrfuiMk_DmmNsd0DLiYK4cDETf_VdI1elog6p3LX30k",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:3000/todos/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-todo-by-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTY0NGJlZGJhY2QyMTA4ZjIxYWQyZCIsImlhdCI6MTY2MjQwNDQwNywiZXhwIjoxNjYyNDA4MDA3fQ.RrfuiMk_DmmNsd0DLiYK4cDETf_VdI1elog6p3LX30k",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:3000/todos/631649d1326bcc2d8319e743",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"631649d1326bcc2d8319e743"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTY0NGJlZGJhY2QyMTA4ZjIxYWQyZCIsImlhdCI6MTY2MjQwNDQwNywiZXhwIjoxNjYyNDA4MDA3fQ.RrfuiMk_DmmNsd0DLiYK4cDETf_VdI1elog6p3LX30k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "task 3",
+							"type": "default"
+						},
+						{
+							"key": "description",
+							"value": "Need to do task 3",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/todos",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-todo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTY0NGJlZGJhY2QyMTA4ZjIxYWQyZCIsImlhdCI6MTY2MjQwNDQwNywiZXhwIjoxNjYyNDA4MDA3fQ.RrfuiMk_DmmNsd0DLiYK4cDETf_VdI1elog6p3LX30k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "task 3",
+							"type": "default"
+						},
+						{
+							"key": "description",
+							"value": "Need to do task 4",
+							"type": "default"
+						},
+						{
+							"key": "status",
+							"value": "true",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/todos/631649d9326bcc2d8319e745",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"631649d9326bcc2d8319e745"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-todo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTY0NGJlZGJhY2QyMTA4ZjIxYWQyZCIsImlhdCI6MTY2MjQwNDQwNywiZXhwIjoxNjYyNDA4MDA3fQ.RrfuiMk_DmmNsd0DLiYK4cDETf_VdI1elog6p3LX30k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:3000/todos/631649d9326bcc2d8319e745",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"631649d9326bcc2d8319e745"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "john",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "john@hotmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
